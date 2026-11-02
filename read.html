@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reader — Leafreader</title>
+    <meta name="description" content="Read a public-domain classic in a quiet, ad-free reader.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="referrer" content="no-referrer">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    >
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/theme-init.js"></script>
+  </head>
+  <body class="reader-page">
+    <a class="skip-link" href="#chapter">Skip to chapter</a>
+    <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+    <header class="reader-header">
+      <div class="reader-header-inner">
+        <a class="brand brand-small" href="./" aria-label="Back to the library">
+          <span class="brand-mark" aria-hidden="true">◒</span>
+          <span>leaf<span class="brand-accent">reader</span></span>
+        </a>
+
+        <p class="reader-book" id="book-title">Loading…</p>
+
+        <div class="reader-tools">
+          <button class="tool-button" id="toc-toggle" type="button" aria-expanded="false" aria-controls="toc">
+            Contents
+          </button>
+          <div class="font-tools" role="group" aria-label="Text size">
+            <button class="icon-button" id="font-down" type="button" aria-label="Decrease text size">A−</button>
+            <button class="icon-button" id="font-up" type="button" aria-label="Increase text size">A+</button>
+          </div>
+          <button class="icon-button" data-theme-toggle type="button" aria-label="Toggle color theme">☾</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="reader-layout">
+      <aside class="toc" id="toc" aria-label="Table of contents">
+        <div class="toc-head">
+          <p class="eyebrow">Contents</p>
+          <p class="toc-book" id="toc-book"></p>
+        </div>
+        <ol class="toc-list" id="toc-list"></ol>
+        <p class="toc-hint">Use ← → to turn chapters</p>
+      </aside>
+      <div class="toc-backdrop" id="toc-backdrop" hidden></div>
+
+      <main class="reader-main" id="chapter">
+        <article class="chapter" id="chapter-article" aria-busy="true"></article>
+
+        <nav class="chapter-nav" aria-label="Chapter navigation">
+          <a class="chapter-link" id="prev-chapter" href="#" rel="prev">← Previous</a>
+          <span class="chapter-position" id="chapter-position"></span>
+          <a class="chapter-link" id="next-chapter" href="#" rel="next">Next →</a>
+        </nav>
+
+        <footer class="reader-footer">
+          <p id="chapter-meta"></p>
+          <p>
+            Source: <a id="source-link" href="https://www.gutenberg.org/" rel="noopener">Project Gutenberg</a>
+            · Public domain in the United States.
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <div class="wrap" id="error" hidden>
+      <div class="notice notice-error">
+        <strong>This book could not be opened.</strong>
+        <p id="error-message"></p>
+        <p><a href="./">Return to the library</a></p>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="wrap">
+        <div class="notice notice-error">Leafreader needs JavaScript to load chapters.</div>
+      </div>
+    </noscript>
+
+    <script type="module" src="assets/reader.js"></script>
+  </body>
+</html>

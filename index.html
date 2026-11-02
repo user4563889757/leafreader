@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leafreader — public-domain novels, zero cost</title>
+    <meta
+      name="description"
+      content="A free, static webnovel reader for public-domain classics. No accounts, no tracking, no server bill."
+    >
+    <meta name="color-scheme" content="light dark">
+    <meta name="referrer" content="no-referrer">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    >
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/theme-init.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#library">Skip to library</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./" aria-label="Leafreader home">
+          <span class="brand-mark" aria-hidden="true">◒</span>
+          <span>leaf<span class="brand-accent">reader</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="#library">Library</a>
+          <a href="#about">About</a>
+          <a href="#import">Add books</a>
+          <button class="icon-button" data-theme-toggle type="button" aria-label="Toggle color theme">☾</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <p class="eyebrow">Public domain · Static site · $0 to run</p>
+          <h1>Classic novels,<br><em>cleanly read.</em></h1>
+          <p class="hero-copy">
+            A quiet, ad-free reader for books that belong to everyone. No accounts,
+            no analytics, no server — just text, typography, and a place to come back to.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#library">Browse the library</a>
+            <a class="button button-ghost" id="start-reading" href="#library">Start reading</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>Books</dt><dd><span id="hero-books">—</span></dd></div>
+            <div><dt>Cost</dt><dd>$0</dd></div>
+            <div><dt>Tracking</dt><dd>None</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="wrap" id="continue" aria-live="polite"></div>
+
+      <section class="library wrap" id="library">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The shelf</p>
+            <h2>Library</h2>
+            <p class="section-note" id="count">Loading…</p>
+          </div>
+          <div class="library-controls">
+            <label class="search-field">
+              <span class="visually-hidden">Search the library</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+                <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                <path d="m16.5 16.5 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+              <input id="search" type="search" placeholder="Search title, author, genre…" autocomplete="off">
+            </label>
+            <label class="select-field">
+              <span class="visually-hidden">Sort books</span>
+              <select id="sort">
+                <option value="title">Title A–Z</option>
+                <option value="author">Author A–Z</option>
+                <option value="newest">Newest first</option>
+                <option value="shortest">Shortest first</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="chips" id="genres" role="group" aria-label="Filter by genre"></div>
+        <div class="book-grid" id="grid" aria-live="polite"></div>
+        <p class="empty-state" id="empty" hidden>
+          Nothing matches that search. Try a different title, author, or genre.
+        </p>
+      </section>
+
+      <section class="about wrap" id="about">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Why this exists</p>
+            <h2>A small site with no bill attached</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-number">01</span>
+            <h3>Zero-cost by design</h3>
+            <p>
+              Every page is static HTML, CSS, and JavaScript. Host it on GitHub Pages,
+              Cloudflare Pages, or Netlify's free tier. No database, no container, no
+              AWS trial to expire.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">02</span>
+            <h3>Public domain only</h3>
+            <p>
+              The demo library is imported from Project Gutenberg. Each book keeps a
+              link to its source. Add only texts that are public domain or that you
+              have permission to publish.
+            </p>
+          </article>
+          <article class="feature">
+            <span class="feature-number">03</span>
+            <h3>Private by default</h3>
+            <p>
+              Reading progress and theme choices live in your browser's local storage.
+              There are no accounts, cookies, analytics scripts, or third-party fonts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="import wrap" id="import">
+        <div class="import-card">
+          <div>
+            <p class="eyebrow">Bring your own shelf</p>
+            <h2>Add a book in one command</h2>
+            <p>
+              The importer uses only Python's standard library. It pulls a public-domain
+              text from Project Gutenberg, splits it into chapters, and writes plain JSON.
+            </p>
+          </div>
+          <pre class="code-block"><code>python3 scripts/import_gutenberg.py \
+  --id 2701 --id 345</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p><span class="brand-mark" aria-hidden="true">◒</span> Leafreader · a static reading room</p>
+        <p class="footer-note">
+          Texts are public domain in the United States, sourced from
+          <a href="https://www.gutenberg.org/" rel="noopener">Project Gutenberg</a>.
+          Code is MIT licensed. No affiliation with Project Gutenberg.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>

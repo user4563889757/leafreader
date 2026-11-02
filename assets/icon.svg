@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Leafreader">
+  <rect width="64" height="64" rx="14" fill="#2f6b4f"/>
+  <path d="M32 12c-9.5 7.5-15 15.5-15 23.5C17 44.2 23.7 51 32 53c8.3-2 15-8.8 15-17.5C47 27.5 41.5 19.5 32 12Z" fill="#f6f1e7"/>
+  <path d="M32 18v30" stroke="#2f6b4f" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M32 29c-3.2-1.4-6-4-7.4-7.2M32 37c3.4-1.2 6.4-3.8 8-7" fill="none" stroke="#2f6b4f" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

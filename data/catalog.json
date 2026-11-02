@@ -1,0 +1,108 @@
+{
+  "updated": "2026-11-02",
+  "books": [
+    {
+      "id": "alice-in-wonderland",
+      "gutenbergId": 11,
+      "title": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "year": "1865",
+      "genres": [
+        "Fantasy",
+        "Children's",
+        "Classics"
+      ],
+      "description": "A bored girl follows a waistcoated rabbit down a hole and lands in a world where logic is optional, queens are lethal, and a cat can vanish mid-conversation.",
+      "hue": 158,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/11",
+        "license": "Public domain (US)"
+      },
+      "chapterCount": 12,
+      "wordCount": 26358
+    },
+    {
+      "id": "frankenstein",
+      "gutenbergId": 84,
+      "title": "Frankenstein",
+      "author": "Mary Wollstonecraft Shelley",
+      "year": "1818",
+      "genres": [
+        "Gothic",
+        "Science Fiction",
+        "Classics"
+      ],
+      "description": "A gifted student assembles a living creature from dead matter, then abandons it. What follows is less a monster story than a study of ambition, neglect, and revenge.",
+      "hue": 210,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/84",
+        "license": "Public domain (US)"
+      },
+      "chapterCount": 29,
+      "wordCount": 74860
+    },
+    {
+      "id": "pride-and-prejudice",
+      "gutenbergId": 1342,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": "1813",
+      "genres": [
+        "Romance",
+        "Classics"
+      ],
+      "description": "Elizabeth Bennet has opinions, a sharp tongue, and no patience for Mr. Darcy. Manners, money, and misjudgement do the rest.",
+      "hue": 340,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/1342",
+        "license": "Public domain (US)"
+      },
+      "chapterCount": 62,
+      "wordCount": 126958
+    },
+    {
+      "id": "sherlock-holmes",
+      "gutenbergId": 1661,
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Arthur Conan Doyle",
+      "year": "1892",
+      "genres": [
+        "Mystery",
+        "Classics"
+      ],
+      "description": "Twelve adventures of literature's most famous consulting detective, narrated by Dr. Watson and set in the fog of Victorian London.",
+      "hue": 32,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/1661",
+        "license": "Public domain (US)"
+      },
+      "chapterCount": 12,
+      "wordCount": 104350
+    },
+    {
+      "id": "the-art-of-war",
+      "gutenbergId": 132,
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "year": "c. 5th century BCE",
+      "genres": [
+        "Philosophy",
+        "Strategy",
+        "Classics"
+      ],
+      "description": "Thirteen compact chapters on conflict, deception, terrain, and leadership, still quoted wherever strategists gather.",
+      "hue": 8,
+      "source": {
+        "name": "Project Gutenberg",
+        "url": "https://www.gutenberg.org/ebooks/132",
+        "license": "Public domain (US)"
+      },
+      "chapterCount": 13,
+      "wordCount": 40586
+    }
+  ]
+}

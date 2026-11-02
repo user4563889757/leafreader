@@ -1,0 +1,18 @@
+{
+  "name": "Leafreader",
+  "short_name": "Leafreader",
+  "description": "A quiet, ad-free reader for public-domain classics.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f1e7",
+  "theme_color": "#2f6b4f",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

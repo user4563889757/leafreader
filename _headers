@@ -1,0 +1,30 @@
+# Security headers for Cloudflare Pages and Netlify.
+# GitHub Pages ignores this file; the pages also carry a CSP <meta> fallback.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Asset filenames are not content-hashed, so keep their cache lifetime short
+# enough that a deploy is visible without a hard refresh.
+/assets/*
+  Cache-Control: public, max-age=300
+
+/data/*
+  Cache-Control: public, max-age=60
+
+/index.html
+  Cache-Control: no-cache
+
+/read.html
+  Cache-Control: no-cache
+
+/sw.js
+  Cache-Control: no-cache
+  Service-Worker-Allowed: /
